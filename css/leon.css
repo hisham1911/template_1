@@ -16,6 +16,9 @@
 body {
   font-family: "Work Sans", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -100,7 +103,7 @@ body {
 }
 .header .links .icon span:nth-child(2) {
   width: 60%;
-  transition: 0.5s;
+  transition: var(--main-duration);
 }
 .header .links .icon:hover span:nth-child(2) {
   width: 100%;
@@ -113,14 +116,13 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  background-color: #f6f6f6;
+  background-color: var(--section-background);
   position: absolute;
   right: 0;
   min-width: 200px;
   top: calc(100% + 15px);
   display: none;
   z-index: 1;
-  /* transition: 0.5s; */
 }
 
 .header .links ul::before {
@@ -142,7 +144,7 @@ body {
   padding: 15px;
   text-decoration: none;
   color: #333;
-  transition: 0.5s;
+  transition: var(--main-duration);
 }
 
 .header .links ul li a:hover {
@@ -183,9 +185,9 @@ body {
 /* end landing */
 /* start features */
 .features {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: #f6f6f6;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
 }
 .features .container {
   display: grid;
@@ -193,13 +195,11 @@ body {
   grid-gap: 20px;
 }
 .features .container .feat {
-  /* background-color: #ddd; */
   text-align: center;
   padding: 20px;
 }
 .features .container .feat i {
   color: var(--main-color);
-  /* display: block; */
   font-size: 50px;
 }
 .features .container .feat h3 {
@@ -270,7 +270,7 @@ body {
 /* end services */
 /* start protofolio */
 .portfolio {
-  background-color: #f6f6f6;
+  background-color: var(--section-background);
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
 }
@@ -278,14 +278,15 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 30px;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 .portfolio .portfolio-content .card {
-  display: flex;
-  flex-direction: column;
+  background-color: #fff;
+}
+.portfolio .portfolio-content .card img {
+  max-width: 100%;
 }
 .portfolio .portfolio-content .card .info {
-  background-color: #fff;
   padding: 20px;
 }
 .portfolio .portfolio-content .card .info h3 {
@@ -311,12 +312,12 @@ body {
 @media (max-width: 991px) {
   .about .container .about-content {
     flex-direction: column;
+    text-align: center;
   }
 }
 .about .container .about-content .text {
-  /* width: 500px; */
   flex-basis: calc(100% - 500px);
-  padding: 50px;
+  /* padding: 50px; */
 }
 .about .container .about-content .text p:first-of-type {
   font-weight: bold;
@@ -383,12 +384,11 @@ body {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
   letter-spacing: -1px;
-  /* word-spacing: ; */
 }
 .contact .info p:first-child {
   font-weight: 800;
   font-size: 35px;
-  color: #2c4755;
+  color: var(--secondary-color);
   margin-bottom: 15px;
 }
 .contact .info a {
